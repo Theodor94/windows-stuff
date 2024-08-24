@@ -1,0 +1,23 @@
+Steps to Make a Custom Folder Appear Above "This PC" in Explorer Sidebar
+Add the Custom Folder Using a Tool:
+
+Use a tool like WinAero Tweaker to add the custom folder ("Digi Storage") to the Explorer sidebar.
+Find the New CLSID:
+
+After adding the folder, find the new CLSID for "Digi Storage". This can be found under:
+objectivec
+Copy code
+HKEY_CLASSES_ROOT\CLSID\
+Add SortOrderIndex Value:
+
+Navigate to the newly created CLSID key for "Digi Storage". For example:
+
+HKEY_CLASSES_ROOT\CLSID\{5f2a9eb7-b6cb-45be-bcdd-ee049a8b8d16}
+Right-click on the CLSID key, select "New" -> "DWORD (32-bit) Value".
+Name the new value SortOrderIndex.
+Double-click on SortOrderIndex and set its value to 42 (Hexadecimal).
+Restart Windows Explorer:
+
+Press Ctrl + Shift + Esc to open Task Manager.
+Find and select "Windows Explorer" in the list of processes.
+Click "Restart" at the bottom right.
